@@ -82,6 +82,10 @@ public class MainActivity extends AppCompatActivity {
 
         pantallaCaptura.setText(valorIngresado);
         contP = 0;
+
+
+
+
     }
 
     public void operaciones(View view) {
@@ -110,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.Porcentaje:
                 if (operador.equals("*")) {
                     operador = "porcentaje";
+                    return;  //se sale del metodo para que no agregue otros valores
                 }
         }
         valorIngresado2 = valorIngresado;
@@ -137,7 +142,8 @@ public class MainActivity extends AppCompatActivity {
                             } else {
                                 Toast.makeText(MainActivity.this, "Error No se puede dividir entre 0 ", Toast.LENGTH_LONG).show();
 
-                            }break;
+                            }
+                            break;
 
                         case "exponente":
                             resultado = (Double) Math.pow(Double.parseDouble(valorIngresado2), Double.parseDouble(valorIngresado));
@@ -200,4 +206,5 @@ public class MainActivity extends AppCompatActivity {
         }
         pantallaCaptura.setText(valorIngresado);
     }
+
 }
