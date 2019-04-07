@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TableRow
+        android:id="@+id/SeparadorLogo"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="0.001"
+        android:background="@android:color/background_light"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:id="@+id/Portada"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:src="@drawable/logo" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/SeparadorBuscador"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="0.001">
+
+        <SearchView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.85"
+            android:background="@android:color/background_light" />
+
+        <Button
+            android:id="@+id/btnAgregarMiembro"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.15"
+            android:background="@android:drawable/ic_input_add" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/SeparadorLista"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.7"
+        android:background="@android:color/background_light">
+
+        <ListView
+            android:id="@+id/Lista"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </ListView>
+
+    </TableRow>
+
+</TableLayout>
