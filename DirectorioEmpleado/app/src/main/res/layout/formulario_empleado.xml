@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:padding="10dp">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:scrollbars="none">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableRow
+                android:id="@+id/SeparadorTitulo"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="0.6"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/TextViewTitulo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:background="@color/colorPrimaryDark"
+                    android:gravity="center"
+                    android:text="Formulario Empleado"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="25dp"
+                    android:textStyle="italic"
+                    android:typeface="serif" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/TextViewTituloDP"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:gravity="center"
+                    android:text="-------- Datos Personales --------"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="20dp"
+                    android:textStyle="italic"
+                    android:typeface="serif" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/SeparadorNombre"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="0.6"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/TextViewNombre"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Nombre"
+                    android:textColor="@android:color/white"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/EditTextNombre"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:background="@android:color/background_light"
+                    android:inputType="textPersonName" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/SeparadorApellidoP"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="0.6"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/TextViewApellidoP"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Apellido P."
+                    android:textColor="@android:color/white"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/EditTextApellidoP"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:background="@android:color/background_light"
+                    android:inputType="textPersonName" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/SeparadorApellidoM"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="0.6"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/TextViewApellidoM"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Apellido M."
+                    android:textColor="@android:color/white"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/EditTextApellidoM"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:background="@android:color/background_light"
+                    android:inputType="textPersonName" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/SeparadorTelefono"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="0.6"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/TextViewTelefono"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Telefono"
+                    android:textColor="@android:color/white"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/EditTextTelefono"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:background="@android:color/background_light"
+                    android:inputType="textPersonName" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/SeparadorCorreo"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="0.6"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/TextViewCorreo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Correo"
+                    android:textColor="@android:color/white"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/EditTextCorreo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:background="@android:color/background_light"
+                    android:inputType="textPersonName" />
+            </TableRow>
+
+
+            <TableRow
+                android:id="@+id/SeparadorNacionalidad"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="0.6"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/TextViewNacionalidad"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Nacionalidad"
+                    android:textColor="@android:color/white"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/EditTextNacionalidad"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:background="@android:color/background_light"
+                    android:inputType="textPersonName" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/SeparadorFechaNacimiento"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="0.6"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/TextViewFechaNacimiento"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Fecha Nac."
+                    android:textColor="@android:color/white"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/EditTextFechaNacimiento"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:background="@android:color/background_light"
+                    android:inputType="textPersonName" />
+            </TableRow>
+
+
+            <TableRow
+                android:id="@+id/SeparadorEstadoCivil"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="0.6"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/TextViewEstadoCivil"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Estado Civil"
+                    android:textColor="@android:color/white"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/EditTextEstadoCivil"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:background="@android:color/background_light"
+                    android:inputType="textPersonName" />
+            </TableRow>
+
+
+            <TableRow
+                android:id="@+id/SeparadorCalle"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="0.6"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/TextViewCalle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Calle"
+                    android:textColor="@android:color/white"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/EditTextCalle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:background="@android:color/background_light"
+                    android:inputType="textPersonName" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/SeparadorColonia"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="0.6"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/TextViewColonia"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Colonia"
+                    android:textColor="@android:color/white"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/EditTextColonia"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:background="@android:color/background_light"
+                    android:inputType="textPersonName" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/SeparadorCiudad"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="0.6"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/TextViewCiudad"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Ciudad"
+                    android:textColor="@android:color/white"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/EditTextCiudad"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:background="@android:color/background_light"
+                    android:inputType="textPersonName" />
+            </TableRow>
+
+
+            <TableRow
+                android:id="@+id/SeparadorEstado"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="0.6"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/TextViewEstado"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Estado"
+                    android:textColor="@android:color/white"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/EditTextEstado"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:background="@android:color/background_light"
+                    android:inputType="textPersonName" />
+            </TableRow>
+
+
+            <TableRow
+                android:id="@+id/SeparadorPais"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="0.6"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/TextViewPais"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Pais"
+                    android:textColor="@android:color/white"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/EditTextPais"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:background="@android:color/background_light"
+                    android:inputType="textPersonName" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/TextViewTituloDL"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:gravity="center"
+                    android:text="-------- Datos Laborales --------"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="20dp"
+                    android:textStyle="italic"
+                    android:typeface="serif" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/SeparadorNomina"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="0.12"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/TextViewNomina"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="No. Nomina"
+                    android:textColor="@android:color/white"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/EditTextNomina"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:background="@android:color/background_light"
+                    android:inputType="textPersonName" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/SeparadorPuesto"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="0.12"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/TextViewPuesto"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Puesto"
+                    android:textColor="@android:color/white"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/EditTextPuesto"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:background="@android:color/background_light"
+                    android:inputType="textPersonName" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/SeparadorRfc"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="0.12"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/TextViewRfc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="RFC"
+                    android:textColor="@android:color/white"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/EditTextRfc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:background="@android:color/background_light"
+                    android:inputType="textPersonName" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/SeparadorCurp"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="0.12"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/TextViewCurp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="CURP"
+                    android:textColor="@android:color/white"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/EditTextCurp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:background="@android:color/background_light"
+                    android:inputType="textPersonName" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/SeparadorNss"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="0.12"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/TextViewNss"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="NSS"
+                    android:textColor="@android:color/white"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/EditTextNss"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:background="@android:color/background_light"
+                    android:inputType="textPersonName" />
+            </TableRow>
+
+
+            <TableRow
+                android:id="@+id/SeparadorContacto"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="0.12"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/TextViewContacto"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Contacto"
+                    android:textColor="@android:color/white"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/EditTextContacto"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:background="@android:color/background_light"
+                    android:inputType="textPersonName" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/SeparadorEscolaridad"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="0.12"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/TextViewEscolaridad"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Escolaridad"
+                    android:textColor="@android:color/white"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/EditTextEscolaridad"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:background="@android:color/background_light"
+                    android:inputType="textPersonName" />
+            </TableRow>
+
+
+            <TableRow
+                android:id="@+id/SeparadorEstatus"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="0.12"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/TextViewEstatus"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Estatus"
+                    android:textColor="@android:color/white"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/EditTextEstatus"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:background="@android:color/background_light"
+                    android:inputType="textPersonName" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/SeparadorBoton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/buttonCancelar"
+                    style="@style/Widget.AppCompat.Button"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:text="CANCELAR"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/buttonAgregar"
+                    style="@style/Widget.AppCompat.Button"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:text="GUARDAR"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textStyle="bold" />
+
+            </TableRow>
+
+        </TableLayout>
+    </ScrollView>
+
+</LinearLayout>

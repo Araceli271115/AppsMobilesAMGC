@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/item_Foto"
+        android:icon="@drawable/foto"
+        android:title="Foto" />
+
+    <item
+        android:id="@+id/item_DPersonal"
+        android:icon="@drawable/personales"
+        android:title="Personal" />
+
+    <item
+        android:id="@+id/item_DLaboral"
+        android:icon="@drawable/laborales"
+        android:title="Laboral" />
+</menu>
