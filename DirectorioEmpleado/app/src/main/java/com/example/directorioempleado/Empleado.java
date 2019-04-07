@@ -1,6 +1,7 @@
 package com.example.directorioempleado;
 
 public class Empleado {
+    int id;
     String nombre;
     String apellidoP;
     String apellidoM;
@@ -23,10 +24,12 @@ public class Empleado {
     String escolaridad;
     String estatus;
 
-    public Empleado(){
+    public Empleado() {
 
     }
-    public Empleado(String nombre, String apellidoP, String apellidoM, String telefono, String correo, String nacionalidad, String fechaNacimieto, String estadoCivil, String calle, String colonia, String ciudad, String estado, String pais, int nomina, String puesto, String rfc, String curp, int nss, String contacto, String escolaridad, String estatus) {
+
+    public Empleado(int id, String nombre, String apellidoP, String apellidoM, String telefono, String correo, String nacionalidad, String fechaNacimieto, String estadoCivil, String calle, String colonia, String ciudad, String estado, String pais, int nomina, String puesto, String rfc, String curp, int nss, String contacto, String escolaridad, String estatus) {
+        this.id = id;
         this.nombre = nombre;
         this.apellidoP = apellidoP;
         this.apellidoM = apellidoM;
@@ -48,6 +51,14 @@ public class Empleado {
         this.contacto = contacto;
         this.escolaridad = escolaridad;
         this.estatus = estatus;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNombre() {
