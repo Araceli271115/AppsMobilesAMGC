@@ -160,16 +160,14 @@ public class Form_Empleado extends AppCompatActivity {
             }
         });
 
-    cancelar.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Intent i = new Intent(Form_Empleado.this, MainActivity.class);
-            startActivity(i);
-        }
-    });
+        cancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Form_Empleado.this, MainActivity.class);
+                startActivity(i);
+            }
+        });
     }
-
-
 
     private void inicializarEmpleado(long empId) {
         oldEmployee = employeeData.ObtenerEmpleado(empId);

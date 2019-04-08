@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.directorioempleado.BD.EmpleadoOperaciones;
+import com.example.directorioempleado.Fragments.DetallesEmpleado;
 import com.example.directorioempleado.Modelo.Empleado;
 
 
@@ -32,8 +33,11 @@ public class Vista_Rapida_Empleado extends AppCompatActivity {
     EditText campoPuesto;
     EditText campoEstatus;
 
+    Button inicio;
     Button eliminar;
     Button modificar;
+    Button detalles;
+
     EmpleadoOperaciones operacion;
     Empleado empleado;
 
@@ -52,8 +56,10 @@ public class Vista_Rapida_Empleado extends AppCompatActivity {
         puesto = getIntent().getExtras().getString("puesto");
         estatus = getIntent().getExtras().getString("estatus");
 
+        inicio = (Button) findViewById(R.id.buttonInicio);
         eliminar = (Button) findViewById(R.id.buttonEliminar);
         modificar = (Button) findViewById(R.id.buttonModificar);
+        detalles =(Button) findViewById(R.id.buttonDetalles);
 
         operacion = new EmpleadoOperaciones(this);
         operacion.conectarBD();
@@ -62,27 +68,35 @@ public class Vista_Rapida_Empleado extends AppCompatActivity {
 
         campoId = (EditText) findViewById(R.id.EditTextId);
         campoId.setText("" + id);
+        campoId.setEnabled(false);
 
         campoNombre = (EditText) findViewById(R.id.EditTextNombre);
         campoNombre.setText(nombre);
+        campoNombre.setEnabled(false);
 
         campoApellidoP = (EditText) findViewById(R.id.EditTextApellidoP);
         campoApellidoP.setText(apellidoP);
+        campoApellidoP.setEnabled(false);
 
         campoApellidoM = (EditText) findViewById(R.id.EditTextApellidoM);
         campoApellidoM.setText(apellidoM);
+        campoApellidoM.setEnabled(false);
 
         campoNomina = (EditText) findViewById(R.id.EditTextNomina);
         campoNomina.setText(nomina);
+        campoNomina.setEnabled(false);
 
         campoTelefono = (EditText) findViewById(R.id.EditTextTelefono);
         campoTelefono.setText(telefono);
+        campoTelefono.setEnabled(false);
 
         campoPuesto = (EditText) findViewById(R.id.EditTextPuesto);
         campoPuesto.setText(puesto);
+        campoPuesto.setEnabled(false);
 
         campoEstatus = (EditText) findViewById(R.id.EditTextEstatus);
         campoEstatus.setText(estatus);
+        campoEstatus.setEnabled(false);
 
         eliminar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,12 +117,31 @@ public class Vista_Rapida_Empleado extends AppCompatActivity {
 
                 Intent i = new Intent(Vista_Rapida_Empleado.this,
                         Form_Empleado.class);
-                i.putExtra("id", id+"");
+                i.putExtra("id", id + "");
                 i.putExtra("mod_add", "Modificar");
 
                 startActivity(i);
             }
         });
+
+        inicio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Vista_Rapida_Empleado.this, MainActivity.class);
+                startActivity(i);
+            }
+        });
+
+        detalles.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent i = new Intent(Vista_Rapida_Empleado.this, DetallesEmpleado.class);
+                i.putExtra("idEmpleado",id+"");
+                startActivity(i);
+            }
+        });
+
 
     }
 

@@ -11,6 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Vista_Rapida_Empleado" />
         <activity android:name=".Form_Empleado" />
+        <activity android:name=".Fragments.DetallesEmpleado" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

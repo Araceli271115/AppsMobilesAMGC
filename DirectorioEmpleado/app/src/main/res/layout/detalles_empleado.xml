@@ -10,17 +10,18 @@
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignBottom="@+id/bottombar" />
+        android:layout_alignBottom="@+id/bottombar"
+        android:layout_marginBottom="56dp" />
 
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bottombar"
-        android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
-        app:menu="@menu/menu_navigation">
-    </android.support.design.widget.BottomNavigationView>
+        app:itemBackground="@android:color/background_light"
+        app:menu="@menu/menu_navigation"></android.support.design.widget.BottomNavigationView>
 
 
 </RelativeLayout>
