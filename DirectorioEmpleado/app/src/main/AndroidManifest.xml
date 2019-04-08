@@ -9,16 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".list_view_items"></activity>
+        <activity android:name=".Vista_Rapida_Empleado" />
+        <activity android:name=".Form_Empleado" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".Formulario_Empleado"
-            android:screenOrientation="portrait">
         </activity>
     </application>
 
