@@ -204,12 +204,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.4"
-            android:text="Area"
+            android:text="Puesto"
             android:textColor="@android:color/white"
             android:textSize="20sp"></TextView>
 
         <EditText
-            android:id="@+id/EditTextArea"
+            android:id="@+id/EditTextPuesto"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.6"
