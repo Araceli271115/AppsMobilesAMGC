@@ -17,9 +17,8 @@ public class Form_Empleado extends AppCompatActivity {
 
 
     private Empleado newEmployee;
-    // private Empleado oldEmployee;
+    private Empleado oldEmployee;
     private String mode;
-    private long empId;
     private EmpleadoOperaciones employeeData;
 
 
@@ -48,14 +47,16 @@ public class Form_Empleado extends AppCompatActivity {
     Button guardar;
     Button cancelar;
 
+    long idR;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form_empleado);
 
         newEmployee = new Empleado();
-        //  oldEmployee = new Empleado();
-
+        oldEmployee = new Empleado();
 
         nombre = (EditText) findViewById(R.id.EditTextNombre);
         apellidoP = (EditText) findViewById(R.id.EditTextApellidoP);
@@ -81,54 +82,52 @@ public class Form_Empleado extends AppCompatActivity {
         guardar = (Button) findViewById(R.id.buttonAgregar);
         cancelar = (Button) findViewById(R.id.buttonCancelar);
 
+
         employeeData = new EmpleadoOperaciones(this);
         employeeData.conectarBD();
 
 
-        // mode = getIntent().getStringExtra(EXTRA_ADD_UPDATE);
-        //  if (mode.equals("Update")) {
+        idR = Long.parseLong(getIntent().getExtras().getString("id"));
 
-        //    guardar.setText("Modificar Empleado");
-        //  empId = getIntent().getLongExtra(EXTRA_EMP_ID, 0);
-        //initializeEmployee(empId);
-
-//}
-
+        mode = getIntent().getExtras().getString("mod_add");
+        if (mode.equals("Modificar")) {
+            inicializarEmpleado(idR);
+        }
 
         guardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // if (mode.equals("Agregar")) {
+                if (mode.equals("Agregar")) {
 
-                newEmployee.setNombre(nombre.getText().toString());
-                newEmployee.setApellidoP(apellidoP.getText().toString());
-                newEmployee.setApellidoM(apellidoM.getText().toString());
-                newEmployee.setTelefono(telefono.getText().toString());
-                newEmployee.setCorreo(correo.getText().toString());
-                newEmployee.setNacionalidad(nacionalidad.getText().toString());
-                newEmployee.setFechaNacimieto(fechaNacimiento.getText().toString());
-                newEmployee.setEstadoCivil(estadoCivil.getText().toString());
-                newEmployee.setCalle(calle.getText().toString());
-                newEmployee.setColonia(colonia.getText().toString());
-                newEmployee.setCiudad(ciudad.getText().toString());
-                newEmployee.setEstado(estado.getText().toString());
-                newEmployee.setPais(pais.getText().toString());
-                newEmployee.setNomina(Long.parseLong(nomina.getText().toString()));
-                newEmployee.setPuesto(puesto.getText().toString());
-                newEmployee.setRfc(rfc.getText().toString());
-                newEmployee.setCurp(curp.getText().toString());
-                newEmployee.setNss(Long.parseLong(nss.getText().toString()));
-                newEmployee.setContacto(contacto.getText().toString());
-                newEmployee.setEscolaridad(escolaridad.getText().toString());
-                newEmployee.setEstatus(estatus.getText().toString());
-                employeeData.AgregarEmpleado(newEmployee);
-                Toast t = Toast.makeText(Form_Empleado.this, "Empleado " + newEmployee.getNombre() + "ha sido agregado!", Toast.LENGTH_SHORT);
-                t.show();
-                Intent i = new Intent(Form_Empleado.this, MainActivity.class);
-                startActivity(i);
+                    newEmployee.setNombre(nombre.getText().toString());
+                    newEmployee.setApellidoP(apellidoP.getText().toString());
+                    newEmployee.setApellidoM(apellidoM.getText().toString());
+                    newEmployee.setTelefono(telefono.getText().toString());
+                    newEmployee.setCorreo(correo.getText().toString());
+                    newEmployee.setNacionalidad(nacionalidad.getText().toString());
+                    newEmployee.setFechaNacimieto(fechaNacimiento.getText().toString());
+                    newEmployee.setEstadoCivil(estadoCivil.getText().toString());
+                    newEmployee.setCalle(calle.getText().toString());
+                    newEmployee.setColonia(colonia.getText().toString());
+                    newEmployee.setCiudad(ciudad.getText().toString());
+                    newEmployee.setEstado(estado.getText().toString());
+                    newEmployee.setPais(pais.getText().toString());
+                    newEmployee.setNomina(nomina.getText().toString());
+                    newEmployee.setPuesto(puesto.getText().toString());
+                    newEmployee.setRfc(rfc.getText().toString());
+                    newEmployee.setCurp(curp.getText().toString());
+                    newEmployee.setNss(nss.getText().toString());
+                    newEmployee.setContacto(contacto.getText().toString());
+                    newEmployee.setEscolaridad(escolaridad.getText().toString());
+                    newEmployee.setEstatus(estatus.getText().toString());
+                    employeeData.AgregarEmpleado(newEmployee);
+                    Toast t = Toast.makeText(Form_Empleado.this, "Empleado " + newEmployee.getNombre() + " ha sido agregado!", Toast.LENGTH_SHORT);
+                    t.show();
+                    Intent i = new Intent(Form_Empleado.this, MainActivity.class);
+                    startActivity(i);
 
 
-              /* } else {
+                } else {
 
                     oldEmployee.setNombre(nombre.getText().toString());
                     oldEmployee.setApellidoP(apellidoP.getText().toString());
@@ -143,11 +142,11 @@ public class Form_Empleado extends AppCompatActivity {
                     oldEmployee.setCiudad(ciudad.getText().toString());
                     oldEmployee.setEstado(estado.getText().toString());
                     oldEmployee.setPais(pais.getText().toString());
-                    oldEmployee.setNomina(Long.parseLong(nomina.getText().toString()));
+                    oldEmployee.setNomina(nomina.getText().toString());
                     oldEmployee.setPuesto(puesto.getText().toString());
                     oldEmployee.setRfc(rfc.getText().toString());
                     oldEmployee.setCurp(curp.getText().toString());
-                    oldEmployee.setNss(Long.parseLong(nss.getText().toString()));
+                    oldEmployee.setNss(nss.getText().toString());
                     oldEmployee.setContacto(contacto.getText().toString());
                     oldEmployee.setEscolaridad(escolaridad.getText().toString());
                     oldEmployee.setEstatus(estatus.getText().toString());
@@ -157,12 +156,22 @@ public class Form_Empleado extends AppCompatActivity {
                     Intent i = new Intent(Form_Empleado.this, MainActivity.class);
                     startActivity(i);
 
-                }*/
+                }
             }
         });
+
+    cancelar.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent i = new Intent(Form_Empleado.this, MainActivity.class);
+            startActivity(i);
+        }
+    });
     }
-/*
-    private void initializeEmployee(long empId) {
+
+
+
+    private void inicializarEmpleado(long empId) {
         oldEmployee = employeeData.ObtenerEmpleado(empId);
         nombre.setText(oldEmployee.getNombre());
         apellidoP.setText(oldEmployee.getApellidoP());
@@ -177,16 +186,16 @@ public class Form_Empleado extends AppCompatActivity {
         ciudad.setText(oldEmployee.getCiudad());
         estado.setText(oldEmployee.getEstado());
         pais.setText(oldEmployee.getPais());
-        nomina.setText((int) oldEmployee.getNomina());
+        nomina.setText(oldEmployee.getNomina());
         puesto.setText(oldEmployee.getPuesto());
         rfc.setText(oldEmployee.getRfc());
         curp.setText(oldEmployee.getCurp());
-        nss.setText((int) oldEmployee.getNss());
+        nss.setText(oldEmployee.getNss());
         contacto.setText(oldEmployee.getContacto());
         escolaridad.setText(oldEmployee.getEscolaridad());
         estatus.setText(oldEmployee.getEstatus());
 
 
-    }*/
-
+    }
 }
+

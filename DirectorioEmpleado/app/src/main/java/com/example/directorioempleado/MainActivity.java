@@ -32,6 +32,8 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this,
                         Form_Empleado.class);
+                i.putExtra("id", "0");
+                i.putExtra("mod_add", "Agregar");
 
                 startActivity(i);
             }

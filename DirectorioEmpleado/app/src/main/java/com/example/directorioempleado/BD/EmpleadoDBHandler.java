@@ -51,11 +51,11 @@ public class EmpleadoDBHandler extends SQLiteOpenHelper {
                     COL_CIUDAD + " TEXT, " +
                     COL_ESTADO + " TEXT, " +
                     COL_PAIS + " TEXT, " +
-                    COL_NOMINA + " INTEGER, " +
+                    COL_NOMINA + " TEXT, " +
                     COL_PUESTO + " TEXT, " +
                     COL_RFC + " TEXT, " +
                     COL_CURP + " TEXT, " +
-                    COL_NSS + " INTEGER, " +
+                    COL_NSS + " TEXT, " +
                     COL_CONTACTO + " TEXT, " +
                     COL_ESCOLARIDAD + " TEXT, " +
                     COL_ESTATUS + " TEXT)";

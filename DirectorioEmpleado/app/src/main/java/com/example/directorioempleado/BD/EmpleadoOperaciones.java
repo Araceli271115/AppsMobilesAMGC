@@ -20,7 +20,6 @@ public class EmpleadoOperaciones {
 
     private static final String[] allColumns = {
             EmpleadoDBHandler.COL_ID,
-            EmpleadoDBHandler.COL_ID,
             EmpleadoDBHandler.COL_NOMBRE,
             EmpleadoDBHandler.COL_APELLIDOP,
             EmpleadoDBHandler.COL_APELLIDOM,
@@ -107,28 +106,28 @@ public class EmpleadoOperaciones {
             cursor.moveToFirst();
 
         Empleado e = new Empleado(
-                Long.parseLong(cursor.getString(0)),
-                cursor.getString(1),
-                cursor.getString(2),
-                cursor.getString(3),
-                cursor.getString(4),
-                cursor.getString(5),
-                cursor.getString(6),
-                cursor.getString(7),
-                cursor.getString(8),
-                cursor.getString(9),
-                cursor.getString(10),
-                cursor.getString(11),
-                cursor.getString(12),
-                cursor.getString(13),
-                Long.parseLong(cursor.getString(14)),
-                cursor.getString(15),
-                cursor.getString(16),
-                cursor.getString(17),
-                Long.parseLong(cursor.getString(18)),
-                cursor.getString(19),
-                cursor.getString(20),
-                cursor.getString(21));
+                Long.parseLong(cursor.getString(0)), //id
+                cursor.getString(1),//nombre
+                cursor.getString(2),//apellidoP
+                cursor.getString(3),//apellidoM
+                cursor.getString(4),//telefono
+                cursor.getString(5),//correo
+                cursor.getString(6),//nacionalidad
+                cursor.getString(7),//fechaNa
+                cursor.getString(8),//estadoC
+                cursor.getString(9),//calle
+                cursor.getString(10),//colonia
+                cursor.getString(11),//ciudad
+                cursor.getString(12),//estado
+                cursor.getString(13),//pais
+                cursor.getString(14),//nomina
+                cursor.getString(15),//puesto
+                cursor.getString(16),//rfc
+                cursor.getString(17),//curp
+                cursor.getString(18),//nss
+                cursor.getString(19),//contact
+                cursor.getString(20),//escolaridad
+                cursor.getString(21));//estatus
 
 
         // retorna empleado
@@ -166,11 +165,11 @@ public class EmpleadoOperaciones {
                 e.setCiudad(cursor.getString(cursor.getColumnIndex(EmpleadoDBHandler.COL_CIUDAD)));
                 e.setEstado(cursor.getString(cursor.getColumnIndex(EmpleadoDBHandler.COL_ESTADO)));
                 e.setPais(cursor.getString(cursor.getColumnIndex(EmpleadoDBHandler.COL_PAIS)));
-                e.setNomina(cursor.getLong(cursor.getColumnIndex(EmpleadoDBHandler.COL_NOMINA)));
+                e.setNomina(cursor.getString(cursor.getColumnIndex(EmpleadoDBHandler.COL_NOMINA)));
                 e.setPuesto(cursor.getString(cursor.getColumnIndex(EmpleadoDBHandler.COL_PUESTO)));
                 e.setRfc(cursor.getString(cursor.getColumnIndex(EmpleadoDBHandler.COL_RFC)));
                 e.setCurp(cursor.getString(cursor.getColumnIndex(EmpleadoDBHandler.COL_CURP)));
-                e.setNss(cursor.getLong(cursor.getColumnIndex(EmpleadoDBHandler.COL_NSS)));
+                e.setNss(cursor.getString(cursor.getColumnIndex(EmpleadoDBHandler.COL_NSS)));
                 e.setContacto(cursor.getString(cursor.getColumnIndex(EmpleadoDBHandler.COL_CONTACTO)));
                 e.setEscolaridad(cursor.getString(cursor.getColumnIndex(EmpleadoDBHandler.COL_ESCOLARIDAD)));
                 e.setEstatus(cursor.getString(cursor.getColumnIndex(EmpleadoDBHandler.COL_ESTATUS)));
@@ -218,10 +217,11 @@ public class EmpleadoOperaciones {
 
     // Eliminar un empleado
 
-    public void EliminarEmpleado(Empleado e) {
+    public void eliminarEmpleado(Empleado e) {
         database.delete(EmpleadoDBHandler.TABLA_EMPLEADO,
                 EmpleadoDBHandler.COL_ID + "=" + e.getId(),
                 null);
     }
+
 
 }

@@ -15,11 +15,11 @@ public class Empleado {
     String ciudad;
     String estado;
     String pais;
-    long nomina;
+    String nomina;
     String puesto;
     String rfc;
     String curp;
-    long nss;
+    String nss;
     String contacto;
     String escolaridad;
     String estatus;
@@ -28,7 +28,7 @@ public class Empleado {
 
     }
 
-    public Empleado(long id, String nombre, String apellidoP, String apellidoM, String telefono, String correo, String nacionalidad, String fechaNacimieto, String estadoCivil, String calle, String colonia, String ciudad, String estado, String pais, long nomina, String puesto, String rfc, String curp, long nss, String contacto, String escolaridad, String estatus) {
+    public Empleado(long id, String nombre, String apellidoP, String apellidoM, String telefono, String correo, String nacionalidad, String fechaNacimieto, String estadoCivil, String calle, String colonia, String ciudad, String estado, String pais, String nomina, String puesto, String rfc, String curp, String nss, String contacto, String escolaridad, String estatus) {
         this.id = id;
         this.nombre = nombre;
         this.apellidoP = apellidoP;
@@ -165,11 +165,11 @@ public class Empleado {
         this.pais = pais;
     }
 
-    public long getNomina() {
+    public String getNomina() {
         return nomina;
     }
 
-    public void setNomina(long nomina) {
+    public void setNomina(String nomina) {
         this.nomina = nomina;
     }
 
@@ -197,11 +197,11 @@ public class Empleado {
         this.curp = curp;
     }
 
-    public long getNss() {
+    public String getNss() {
         return nss;
     }
 
-    public void setNss(long nss) {
+    public void setNss(String nss) {
         this.nss = nss;
     }
 
