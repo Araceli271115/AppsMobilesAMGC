@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="txt1">Hello</string>
+    <string name="txt2">How are you</string>
+    <string name="txt3">Fine</string>
+</resources>
